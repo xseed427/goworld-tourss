@@ -1,0 +1,82 @@
+{
+  "placeholderImages": [
+    {
+      "id": "hero",
+      "description": "A stunning landscape view suitable for a hero banner on a travel website.",
+      "imageUrl": "https://images.unsplash.com/photo-1433838552652-f9a46b332c40?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHx0cmF2ZWwlMjBsYW5kc2NhcGV8ZW58MHx8fHwxNzYxMjMzMzEyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "travel landscape"
+    },
+    {
+      "id": "tour1",
+      "description": "Placeholder for a tour in Delhi.",
+      "imageUrl": "https://images.unsplash.com/photo-1656437717719-594345ddb8fc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxEZWxoaSUyMG1vbnVtZW50fGVufDB8fHx8MTc2MTIzNDczN3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "Delhi monument"
+    },
+    {
+      "id": "tour2",
+      "description": "Placeholder for a tour in Mumbai.",
+      "imageUrl": "https://images.unsplash.com/photo-1629652320041-c2c555e68101?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxNdW1iYWklMjBza3lsaW5lfGVufDB8fHx8MTc2MTIzNDczN3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "Mumbai skyline"
+    },
+    {
+      "id": "tour3",
+      "description": "Placeholder for a tour in Kerala.",
+      "imageUrl": "https://images.unsplash.com/photo-1593693397690-362cb9666fc2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxLZXJhbGElMjBiYWNrd2F0ZXJzfGVufDB8fHx8MTc2MTI1ODAzNXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "Kerala backwaters"
+    },
+    {
+      "id": "tour4",
+      "description": "Placeholder for a tour in Jaipur.",
+      "imageUrl": "https://images.unsplash.com/photo-1705861145876-2efd5e0392a5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxKYWlwdXIlMjBwYWxhY2V8ZW58MHx8fHwxNzYxMjM0NzM3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "Jaipur palace"
+    },
+    {
+      "id": "hotel1",
+      "description": "Placeholder for a hotel in Delhi.",
+      "imageUrl": "https://images.unsplash.com/photo-1621293954908-907159247fc8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxsdXh1cnklMjBob3RlbHxlbnwwfHx8fDE3NjEyNTE1OTh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "luxury hotel"
+    },
+    {
+      "id": "hotel2",
+      "description": "Placeholder for a hotel in Mumbai.",
+      "imageUrl": "https://images.unsplash.com/photo-1678698437400-ce344b987821?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxtb2Rlcm4lMjBob3RlbHxlbnwwfHx8fDE3NjEyODgyODV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "modern hotel"
+    },
+    {
+      "id": "hotel3",
+      "description": "Placeholder for a hotel in Kerala.",
+      "imageUrl": "https://images.unsplash.com/photo-1629558160705-dba3fc75390d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxyZXNvcnQlMjBuYXR1cmV8ZW58MHx8fHwxNzYxMzE3ODEzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "resort nature"
+    },
+    {
+      "id": "hotel4",
+      "description": "Placeholder for a hotel in Jaipur.",
+      "imageUrl": "https://images.unsplash.com/photo-1693845611149-c76606dcc5bf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxoZXJpdGFnZSUyMGhvdGVsfGVufDB8fHx8MTc2MTMxNzgxM3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "heritage hotel"
+    },
+    {
+      "id": "vehicle1",
+      "description": "Placeholder for a bike rental.",
+      "imageUrl": "https://images.unsplash.com/photo-1710442995917-c701593c9d75?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxtb3RvcmN5Y2xlJTIwcm9hZHxlbnwwfHx8fDE3NjEyMDQ0Njh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "motorcycle road"
+    },
+    {
+      "id": "vehicle2",
+      "description": "Placeholder for a car rental.",
+      "imageUrl": "https://images.unsplash.com/photo-1648396427686-ebd2c29f4e49?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxzZWRhbiUyMGNhcnxlbnwwfHx8fDE3NjEyODU4NjN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "sedan car"
+    },
+    {
+      "id": "vehicle3",
+      "description": "Placeholder for a tempo traveller rental.",
+      "imageUrl": "https://images.unsplash.com/photo-1670825372656-af0361b7425a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHx0cmF2ZWwlMjB2YW58ZW58MHx8fHwxNzYxMzE3ODEzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "travel van"
+    },
+    {
+      "id": "vehicle4",
+      "description": "Placeholder for a scooter rental.",
+      "imageUrl": "https://images.unsplash.com/photo-1627009607638-9f891bfd0912?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8c2Nvb3RlciUyMGNpdHl8ZW58MHx8fHwxNzYxMzA4MTE2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "scooter city"
+    }
+  ]
+}
