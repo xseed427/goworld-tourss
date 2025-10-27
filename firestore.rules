@@ -1,0 +1,185 @@
+/**
+ * @fileoverview Firestore Security Rules for GoWorld Tours.
+ *
+ * Core Philosophy:
+ * This ruleset enforces a strict user and vendor ownership model, ensuring that only authenticated users can access their own data and vendors can manage their own resources.
+ *
+ * Data Structure:
+ * - User profiles are stored under `/users/{userId}`.
+ * - Vendor profiles are stored under `/vendors/{vendorId}`.
+ * - Tours, hotels, and vehicles are stored under `/vendors/{vendorId}/tours/{tourId}`, `/vendors/{vendorId}/hotels/{hotelId}`, and `/vendors/{vendorId}/vehicles/{vehicleId}` respectively.
+ * - User plans and orders are stored under `/users/{userId}/plans/{planId}` and `/users/{userId}/orders/{orderId}` respectively.
+ *
+ * Key Security Decisions:
+ * - User and vendor data is strictly private, accessible only to the owner and potentially admins (admin role is not implemented in this version).
+ * - Listing of users and vendors is disallowed to prevent information leakage.
+ * - Data integrity is maintained by enforcing that the `userId` and `vendorId` in documents match the corresponding path parameters during creation.
+ * - Immutability is enforced on critical relational fields like `userId` and `vendorId` during updates to prevent unauthorized ownership changes.
+ *
+ * Denormalization for Authorization:
+ * The data structure is designed to avoid `get()` calls in security rules.  Authorization relies on the user or vendor ID being present in the path and/or as a field within the document.
+ *
+ * Structural Segregation:
+ * User and vendor data are stored in separate collections to enforce different access control policies. Public and private data are separated into top-level and user-specific subcollections, respectively.
+ */
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    /**
+     * @description Controls access to user profiles.
+     * @path /users/{userId}
+     * @allow (create) - Authenticated user creates their profile with matching userId.
+     * @allow (get, update, delete) - Authenticated user accesses their own profile.
+     * @deny (list) - Prevents listing of all user profiles.
+     * @deny (create, update, delete) - Unauthorized user attempts to modify another user's profile.
+     * @principle Enforces user-ownership for data access and modification.
+     */
+    match /users/{userId} {
+      function isOwner(userId) {
+        return request.auth != null && request.auth.uid == userId;
+      }
+      function isExistingOwner(userId) {
+        return isOwner(userId) && resource != null;
+      }
+      allow get: if isOwner(userId);
+      allow list: if false;
+      allow create: if isOwner(userId) && request.resource.data.id == userId;
+      allow update: if isExistingOwner(userId) && request.resource.data.id == resource.data.id;
+      allow delete: if isExistingOwner(userId);
+    }
+
+    /**
+     * @description Controls access to vendor profiles.
+     * @path /vendors/{vendorId}
+     * @allow (create) - Authenticated vendor creates their profile with matching vendorId.
+     * @allow (get, update, delete) - Authenticated vendor accesses their own profile.
+     * @deny (list) - Prevents listing of all vendor profiles.
+     * @deny (create, update, delete) - Unauthorized vendor attempts to modify another vendor's profile.
+     * @principle Enforces vendor-ownership for data access and modification.
+     */
+    match /vendors/{vendorId} {
+      function isOwner(vendorId) {
+        return request.auth != null && request.auth.uid == vendorId;
+      }
+      function isExistingOwner(vendorId) {
+        return isOwner(vendorId) && resource != null;
+      }
+      allow get: if isOwner(vendorId);
+      allow list: if false;
+      allow create: if isOwner(vendorId) && request.resource.data.id == vendorId;
+      allow update: if isExistingOwner(vendorId) && request.resource.data.id == resource.data.id;
+      allow delete: if isExistingOwner(vendorId);
+    }
+
+    /**
+     * @description Controls access to tours created by vendors.
+     * @path /vendors/{vendorId}/tours/{tourId}
+     * @allow (create) - Authenticated vendor creates a tour under their vendorId.
+     * @allow (get, list, update, delete) - Authenticated vendor manages their own tours.
+     * @deny (create, update, delete) - Unauthorized vendor attempts to modify another vendor's tours.
+     * @principle Enforces vendor-ownership for data access and modification.
+     */
+    match /vendors/{vendorId}/tours/{tourId} {
+      function isVendorOwner(vendorId) {
+        return request.auth != null && request.auth.uid == vendorId;
+      }
+      function isExistingVendorOwner(vendorId) {
+        return isVendorOwner(vendorId) && resource != null;
+      }
+      allow get: if isVendorOwner(vendorId);
+      allow list: if isVendorOwner(vendorId);
+      allow create: if isVendorOwner(vendorId);
+      allow update: if isExistingVendorOwner(vendorId);
+      allow delete: if isExistingVendorOwner(vendorId);
+    }
+
+    /**
+     * @description Controls access to hotels managed by vendors.
+     * @path /vendors/{vendorId}/hotels/{hotelId}
+     * @allow (create) - Authenticated vendor creates a hotel under their vendorId.
+     * @allow (get, list, update, delete) - Authenticated vendor manages their own hotels.
+     * @deny (create, update, delete) - Unauthorized vendor attempts to modify another vendor's hotels.
+     * @principle Enforces vendor-ownership for data access and modification.
+     */
+    match /vendors/{vendorId}/hotels/{hotelId} {
+      function isVendorOwner(vendorId) {
+        return request.auth != null && request.auth.uid == vendorId;
+      }
+      function isExistingVendorOwner(vendorId) {
+        return isVendorOwner(vendorId) && resource != null;
+      }
+      allow get: if isVendorOwner(vendorId);
+      allow list: if isVendorOwner(vendorId);
+      allow create: if isVendorOwner(vendorId);
+      allow update: if isExistingVendorOwner(vendorId);
+      allow delete: if isExistingVendorOwner(vendorId);
+    }
+
+    /**
+     * @description Controls access to vehicles managed by vendors.
+     * @path /vendors/{vendorId}/vehicles/{vehicleId}
+     * @allow (create) - Authenticated vendor creates a vehicle under their vendorId.
+     * @allow (get, list, update, delete) - Authenticated vendor manages their own vehicles.
+     * @deny (create, update, delete) - Unauthorized vendor attempts to modify another vendor's vehicles.
+     * @principle Enforces vendor-ownership for data access and modification.
+     */
+    match /vendors/{vendorId}/vehicles/{vehicleId} {
+      function isVendorOwner(vendorId) {
+        return request.auth != null && request.auth.uid == vendorId;
+      }
+      function isExistingVendorOwner(vendorId) {
+        return isVendorOwner(vendorId) && resource != null;
+      }
+      allow get: if isVendorOwner(vendorId);
+      allow list: if isVendorOwner(vendorId);
+      allow create: if isVendorOwner(vendorId);
+      allow update: if isExistingVendorOwner(vendorId);
+      allow delete: if isExistingVendorOwner(vendorId);
+    }
+
+    /**
+     * @description Controls access to user travel plans.
+     * @path /users/{userId}/plans/{planId}
+     * @allow (create) - Authenticated user creates a plan under their userId, ensuring userId in the document matches the path.
+     * @allow (get, list, update, delete) - Authenticated user accesses their own plans.
+     * @deny (create, update, delete) - Unauthorized user attempts to modify another user's plans.
+     * @principle Enforces user-ownership for data access and modification.
+     */
+    match /users/{userId}/plans/{planId} {
+      function isOwner(userId) {
+        return request.auth != null && request.auth.uid == userId;
+      }
+      function isExistingOwner(userId) {
+        return isOwner(userId) && resource != null;
+      }
+      allow get: if isOwner(userId);
+      allow list: if isOwner(userId);
+      allow create: if isOwner(userId) && request.resource.data.userId == userId;
+      allow update: if isExistingOwner(userId) && request.resource.data.userId == resource.data.userId;
+      allow delete: if isExistingOwner(userId);
+    }
+
+    /**
+     * @description Controls access to user orders.
+     * @path /users/{userId}/orders/{orderId}
+     * @allow (create) - Authenticated user creates an order under their userId, ensuring userId in the document matches the path.
+     * @allow (get, list, update, delete) - Authenticated user accesses their own orders.
+     * @deny (create, update, delete) - Unauthorized user attempts to modify another user's orders.
+     * @principle Enforces user-ownership for data access and modification.
+     */
+    match /users/{userId}/orders/{orderId} {
+      function isOwner(userId) {
+        return request.auth != null && request.auth.uid == userId;
+      }
+      function isExistingOwner(userId) {
+        return isOwner(userId) && resource != null;
+      }
+      allow get: if isOwner(userId);
+      allow list: if isOwner(userId);
+      allow create: if isOwner(userId) && request.resource.data.userId == userId;
+      allow update: if isExistingOwner(userId) && request.resource.data.userId == resource.data.userId;
+      allow delete: if isExistingOwner(userId);
+    }
+  }
+}

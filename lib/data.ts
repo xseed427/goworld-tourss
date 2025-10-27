@@ -1,0 +1,133 @@
+import type { Tour, Hotel, Vehicle } from './types';
+import { PlaceHolderImages } from './placeholder-images';
+
+export const tours: Tour[] = [
+  {
+    id: '1',
+    title: 'Historical Wonders of Delhi',
+    city: 'Delhi',
+    days: 3,
+    price: { currency: 'INR', amount: 15000 },
+    rating: 4.8,
+    vendorId: 'v1',
+    image: PlaceHolderImages.find((p) => p.id === 'tour1')!,
+  },
+  {
+    id: '2',
+    title: 'Mumbai Film City Adventure',
+    city: 'Mumbai',
+    days: 2,
+    price: { currency: 'INR', amount: 12000 },
+    rating: 4.7,
+    vendorId: 'v2',
+    image: PlaceHolderImages.find((p) => p.id === 'tour2')!,
+  },
+  {
+    id: '3',
+    title: 'Backwaters of Kerala',
+    city: 'Kerala',
+    days: 5,
+    price: { currency: 'INR', amount: 25000 },
+    rating: 4.9,
+    vendorId: 'v3',
+    image: PlaceHolderImages.find((p) => p.id === 'tour3')!,
+  },
+  {
+    id: '4',
+    title: 'Palaces of Rajasthan',
+    city: 'Jaipur',
+    days: 7,
+    price: { currency: 'INR', amount: 35000 },
+    rating: 4.8,
+    vendorId: 'v4',
+    image: PlaceHolderImages.find((p) => p.id === 'tour4')!,
+  },
+];
+
+export const hotels: Hotel[] = [
+  {
+    id: 'h1',
+    name: 'The Grand Palace',
+    city: 'Delhi',
+    stars: 5,
+    amenities: ['Wifi', 'Pool', 'Gym'],
+    priceMin: 8000,
+    vendorId: 'vh1',
+    image: PlaceHolderImages.find((p) => p.id === 'hotel1')!,
+  },
+  {
+    id: 'h2',
+    name: 'Sea View Resort',
+    city: 'Mumbai',
+    stars: 4,
+    amenities: ['Wifi', 'Beach Access'],
+    priceMin: 6000,
+    vendorId: 'vh2',
+    image: PlaceHolderImages.find((p) => p.id === 'hotel2')!,
+  },
+  {
+    id: 'h3',
+    name: 'Green Valley Homestay',
+    city: 'Kerala',
+    stars: 3,
+    amenities: ['Wifi', 'Free Breakfast'],
+    priceMin: 3000,
+    vendorId: 'vh3',
+    image: PlaceHolderImages.find((p) => p.id === 'hotel3')!,
+  },
+  {
+    id: 'h4',
+    name: 'Royale Haveli',
+    city: 'Jaipur',
+    stars: 5,
+    amenities: ['Wifi', 'Pool', 'Spa'],
+    priceMin: 12000,
+    vendorId: 'vh4',
+    image: PlaceHolderImages.find((p) => p.id === 'hotel4')!,
+  },
+];
+
+export const vehicles: Vehicle[] = [
+  {
+    id: 'v1',
+    name: 'Royal Enfield Classic 350',
+    category: 'Bike',
+    seats: 2,
+    pricePerDay: 1500,
+    inclusions: ['Helmet', 'All-India Permit'],
+    vendorId: 'vt1',
+    image: PlaceHolderImages.find((p) => p.id === 'vehicle1')!,
+  },
+  {
+    id: 'v2',
+    name: 'Maruti Suzuki Swift Dzire',
+    category: 'Car',
+    seats: 5,
+    pricePerDay: 3000,
+    inclusions: ['A/C', 'Driver'],
+    vendorId: 'vt2',
+    image: PlaceHolderImages.find((p) => p.id === 'vehicle2')!,
+  },
+  {
+    id: 'v3',
+    name: 'Force Tempo Traveller',
+    category: 'Tempo Traveller',
+    seats: 12,
+    pricePerDay: 6000,
+    inclusions: ['A/C', 'Driver', 'Music System'],
+    vendorId: 'vt3',
+    image: PlaceHolderImages.find((p) => p.id === 'vehicle3')!,
+  },
+  {
+    id: 'v4',
+    name: 'Honda Activa',
+    category: 'Bike',
+    seats: 2,
+    pricePerDay: 800,
+    inclusions: ['Helmet'],
+    vendorId: 'vt4',
+    image: PlaceHolderImages.find((p) => p.id === 'vehicle4')!,
+  },
+];
+
+export const cities = ['Delhi', 'Mumbai', 'Kerala', 'Jaipur', 'Goa', 'Bengaluru'];
