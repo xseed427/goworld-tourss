@@ -8,7 +8,11 @@ import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Logo } from '../icons/logo';
+<<<<<<< HEAD
 import { useUser, useAuth } from '@/firebase';
+=======
+import { useUser, useAuth, useDoc, useMemoFirebase } from '@/firebase';
+>>>>>>> 1f03250 (second commit)
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -19,6 +23,13 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { Avatar, AvatarFallback, AvatarImage } from '../ui/avatar';
 import { signOut } from 'firebase/auth';
+<<<<<<< HEAD
+=======
+import { doc } from 'firebase/firestore';
+import { useFirestore } from '@/firebase';
+import type { UserProfile } from '@/lib/types';
+import { useEffect, useState } from 'react';
+>>>>>>> 1f03250 (second commit)
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -33,9 +44,37 @@ export function Header() {
   const pathname = usePathname();
   const { user, isUserLoading } = useUser();
   const auth = useAuth();
+<<<<<<< HEAD
 
   const handleLogout = () => {
     signOut(auth);
+=======
+  const firestore = useFirestore();
+  const [userProfile, setUserProfile] = useState<UserProfile | null>(null);
+
+  const userDocRef = useMemoFirebase(() => {
+    if (firestore && user?.uid) {
+      return doc(firestore, 'users', user.uid);
+    }
+    return null;
+  }, [firestore, user?.uid]);
+
+  const { data: userData } = useDoc<UserProfile>(userDocRef);
+
+  useEffect(() => {
+    if (userData) {
+      setUserProfile(userData);
+    } else {
+      setUserProfile(null);
+    }
+  }, [userData]);
+
+
+  const handleLogout = () => {
+    if(auth) {
+      signOut(auth);
+    }
+>>>>>>> 1f03250 (second commit)
   };
 
   const NavLink = ({ href, label }: { href: string; label: string }) => {
@@ -61,6 +100,29 @@ export function Header() {
       .join('');
   };
 
+<<<<<<< HEAD
+=======
+  const renderDashboardLink = () => {
+    if (!userProfile) return null;
+    
+    if (userProfile.role === 'vendor') {
+       return (
+        <DropdownMenuItem asChild>
+          <Link href="/vendor/dashboard">Vendor Dashboard</Link>
+        </DropdownMenuItem>
+      );
+    }
+    if (userProfile.role === 'admin') {
+      return (
+        <DropdownMenuItem asChild>
+          <Link href="/admin/dashboard">Admin Dashboard</Link>
+        </DropdownMenuItem>
+      );
+    }
+    return null;
+  }
+
+>>>>>>> 1f03250 (second commit)
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 shadow-sm backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center">
@@ -108,14 +170,25 @@ export function Header() {
                   <Button variant="ghost" className="relative h-8 w-8 rounded-full">
                     <Avatar className="h-9 w-9">
                       <AvatarImage src={user.photoURL || ''} alt={user.displayName || 'User'} />
+<<<<<<< HEAD
                       <AvatarFallback>{getInitials(user.displayName)}</AvatarFallback>
+=======
+                      <AvatarFallback>{getInitials(userProfile?.name || user.displayName)}</AvatarFallback>
+>>>>>>> 1f03250 (second commit)
                     </Avatar>
                   </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="end">
                   <DropdownMenuLabel>My Account</DropdownMenuLabel>
                   <DropdownMenuSeparator />
+<<<<<<< HEAD
                   <DropdownMenuItem>Profile</DropdownMenuItem>
+=======
+                  {renderDashboardLink()}
+                  <DropdownMenuItem asChild>
+                    <Link href="/profile">Profile</Link>
+                  </DropdownMenuItem>
+>>>>>>> 1f03250 (second commit)
                   <DropdownMenuItem>Bookings</DropdownMenuItem>
                   <DropdownMenuSeparator />
                   <DropdownMenuItem onClick={handleLogout}>Log out</DropdownMenuItem>

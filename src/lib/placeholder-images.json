@@ -31,6 +31,33 @@
       "imageHint": "Jaipur palace"
     },
     {
+<<<<<<< HEAD
+=======
+      "id": "tour5",
+      "description": "Placeholder for a tour in Agra.",
+      "imageUrl": "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxUYWolMjBNYWhhbHxlbnwwfHx8fDE3NjE0MDIxNTd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "Taj Mahal"
+    },
+    {
+      "id": "tour6",
+      "description": "Placeholder for a tour in Goa.",
+      "imageUrl": "https://images.unsplash.com/photo-1509292394236-50343405786c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxHb2ElMjBiZWFjaHxlbnwwfHx8fDE3NjE0MDIxODZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "Goa beach"
+    },
+    {
+      "id": "tour7",
+      "description": "Placeholder for a tour in Bengaluru.",
+      "imageUrl": "https://images.unsplash.com/photo-1601131128334-a2538c35b1d7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxCZW5nYWx1cnUlMjBnYXJkZW58ZW58MHx8fHwxNzYxNDAyMjA4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "Bengaluru garden"
+    },
+    {
+      "id": "tour8",
+      "description": "Placeholder for a tour in Rishikesh.",
+      "imageUrl": "https://images.unsplash.com/photo-1620894297614-b552174693b4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxSaXNoaWtlc2glMjBicmlkZ2V8ZW58MHx8fHwxNzYxNDAyMjMwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "Rishikesh bridge"
+    },
+    {
+>>>>>>> 1f03250 (second commit)
       "id": "hotel1",
       "description": "Placeholder for a hotel in Delhi.",
       "imageUrl": "https://images.unsplash.com/photo-1621293954908-907159247fc8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxsdXh1cnklMjBob3RlbHxlbnwwfHx8fDE3NjEyNTE1OTh8MA&ixlib=rb-4.1.0&q=80&w=1080",
@@ -55,6 +82,33 @@
       "imageHint": "heritage hotel"
     },
     {
+<<<<<<< HEAD
+=======
+      "id": "hotel5",
+      "description": "Placeholder for a hotel in Agra.",
+      "imageUrl": "https://images.unsplash.com/photo-1543633452-196b6c208466?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxob3RlbCUyMHBvb2wlMjB2aWV3fGVufDB8fHx8MTc2MTQwMjI5NHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "hotel pool"
+    },
+    {
+      "id": "hotel6",
+      "description": "Placeholder for a hotel in Goa.",
+      "imageUrl": "https://images.unsplash.com/photo-1582719508461-905c673771fd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxiZWFjaCUyMHJlc29ydHxlbnwwfHx8fDE3NjE0MDIzMTd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "beach resort"
+    },
+    {
+      "id": "hotel7",
+      "description": "Placeholder for a hotel in Bengaluru.",
+      "imageUrl": "https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxidXNpbmVzcyUyMGhvdGVsfGVufDB8fHx8MTc2MTQwMjM0MHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "business hotel"
+    },
+    {
+      "id": "hotel8",
+      "description": "Placeholder for a hotel in Rishikesh.",
+      "imageUrl": "https://images.unsplash.com/photo-1598501675317-59f2165a3feb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxyZXRyZWF0JTIwbmF0dXJlfGVufDB8fHx8MTc2MTQwMjM2Mnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "retreat nature"
+    },
+    {
+>>>>>>> 1f03250 (second commit)
       "id": "vehicle1",
       "description": "Placeholder for a bike rental.",
       "imageUrl": "https://images.unsplash.com/photo-1710442995917-c701593c9d75?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxtb3RvcmN5Y2xlJTIwcm9hZHxlbnwwfHx8fDE3NjEyMDQ0Njh8MA&ixlib=rb-4.1.0&q=80&w=1080",

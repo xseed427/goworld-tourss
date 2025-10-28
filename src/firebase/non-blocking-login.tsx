@@ -1,15 +1,24 @@
 'use client';
 import {
+<<<<<<< HEAD
   Auth, 
+=======
+  Auth,
+>>>>>>> 1f03250 (second commit)
   signInAnonymously,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   GoogleAuthProvider,
   signInWithPopup,
+<<<<<<< HEAD
   getAdditionalUserInfo
 } from 'firebase/auth';
 import { Firestore, doc } from 'firebase/firestore';
 import { setDocumentNonBlocking } from './non-blocking-updates';
+=======
+} from 'firebase/auth';
+import { doc, setDoc, Firestore } from 'firebase/firestore';
+>>>>>>> 1f03250 (second commit)
 
 /** Initiate anonymous sign-in (non-blocking). */
 export function initiateAnonymousSignIn(authInstance: Auth): void {
@@ -26,6 +35,7 @@ export function initiateEmailSignIn(authInstance: Auth, email: string, password:
   signInWithEmailAndPassword(authInstance, email, password);
 }
 
+<<<<<<< HEAD
 /** Initiate Google Sign-In (non-blocking). */
 export function initiateGoogleSignIn(authInstance: Auth, firestore: Firestore): void {
   const provider = new GoogleAuthProvider();
@@ -34,6 +44,19 @@ export function initiateGoogleSignIn(authInstance: Auth, firestore: Firestore): 
       const isNewUser = getAdditionalUserInfo(result)?.isNewUser;
       if (isNewUser) {
         const user = result.user;
+=======
+/** Initiate Google sign-in and create user document (non-blocking). */
+export function initiateGoogleSignIn(authInstance: Auth, firestore: Firestore): void {
+  const provider = new GoogleAuthProvider();
+  signInWithPopup(authInstance, provider)
+    .then(result => {
+      // This gives you a Google Access Token. You can use it to access the Google API.
+      const user = result.user;
+      
+      // The signed-in user info.
+      if (user && firestore) {
+        const userRef = doc(firestore, "users", user.uid);
+>>>>>>> 1f03250 (second commit)
         const userData = {
           id: user.uid,
           name: user.displayName,
@@ -42,6 +65,7 @@ export function initiateGoogleSignIn(authInstance: Auth, firestore: Firestore): 
           role: 'user',
           status: 'active',
         };
+<<<<<<< HEAD
         const userRef = doc(firestore, 'users', user.uid);
         setDocumentNonBlocking(userRef, userData, { merge: true });
       }
@@ -53,3 +77,13 @@ export function initiateGoogleSignIn(authInstance: Auth, firestore: Firestore): 
 }
 
     
+=======
+        // Use setDoc here to create the document if it doesn't exist
+        setDoc(userRef, userData, { merge: true });
+      }
+    }).catch(error => {
+      // Handle Errors here.
+      console.error("Google sign-in error:", error);
+    });
+}
+>>>>>>> 1f03250 (second commit)

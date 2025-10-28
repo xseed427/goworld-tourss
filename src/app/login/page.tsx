@@ -1,14 +1,26 @@
 'use client';
 
 import Link from 'next/link';
+<<<<<<< HEAD
 import { useState } from 'react';
+=======
+import { useState, useEffect } from 'react';
+>>>>>>> 1f03250 (second commit)
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
+<<<<<<< HEAD
 import { useAuth, useFirestore, useUser } from '@/firebase';
 import { initiateEmailSignIn, initiateGoogleSignIn } from '@/firebase/non-blocking-login';
 import { useRouter } from 'next/navigation';
+=======
+import { useAuth, useFirestore, useUser, useDoc, useMemoFirebase } from '@/firebase';
+import { initiateEmailSignIn, initiateGoogleSignIn } from '@/firebase/non-blocking-login';
+import { useRouter } from 'next/navigation';
+import { doc } from 'firebase/firestore';
+import type { UserProfile } from '@/lib/types';
+>>>>>>> 1f03250 (second commit)
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
@@ -18,6 +30,7 @@ export default function LoginPage() {
   const { user } = useUser();
   const router = useRouter();
 
+<<<<<<< HEAD
   if (user) {
     router.push('/');
   }
@@ -30,6 +43,49 @@ export default function LoginPage() {
     initiateGoogleSignIn(auth, firestore);
   };
 
+=======
+  // Memoize the document reference
+  const userDocRef = useMemoFirebase(() => {
+    if (firestore && user?.uid) {
+      return doc(firestore, 'users', user.uid);
+    }
+    return null;
+  }, [firestore, user?.uid]);
+
+  // Fetch the user document from Firestore
+  const { data: userData } = useDoc<UserProfile>(userDocRef);
+
+  useEffect(() => {
+    if (user && userData) {
+      if (userData.role === 'admin') {
+        router.push('/admin/dashboard');
+      } else if (userData.role === 'vendor') {
+        router.push('/vendor/dashboard');
+      } else {
+        router.push('/');
+      }
+    }
+  }, [user, userData, router]);
+
+
+  const handleLogin = () => {
+    if(auth) {
+      initiateEmailSignIn(auth, email, password);
+    }
+  };
+  
+  const handleGoogleLogin = () => {
+    if (auth && firestore) {
+      initiateGoogleSignIn(auth, firestore);
+    }
+  };
+
+  // Prevent rendering the form if the user is logged in and we are just waiting for the redirect
+  if (user) {
+    return <div className="flex min-h-[80vh] items-center justify-center bg-background"><p>Logging in...</p></div>;
+  }
+
+>>>>>>> 1f03250 (second commit)
   return (
     <div className="flex min-h-[80vh] items-center justify-center bg-background">
       <Card className="mx-auto w-full max-w-sm rounded-xl">
@@ -85,5 +141,8 @@ export default function LoginPage() {
     </div>
   );
 }
+<<<<<<< HEAD
 
     
+=======
+>>>>>>> 1f03250 (second commit)

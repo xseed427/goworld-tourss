@@ -42,6 +42,49 @@ export const tours: Tour[] = [
     vendorId: 'v4',
     image: PlaceHolderImages.find((p) => p.id === 'tour4')!,
   },
+<<<<<<< HEAD
+=======
+  {
+    id: '5',
+    title: 'Majestic Taj Mahal Sunrise Tour',
+    city: 'Agra',
+    days: 1,
+    price: { currency: 'INR', amount: 8000 },
+    rating: 4.9,
+    vendorId: 'v5',
+    image: PlaceHolderImages.find((p) => p.id === 'tour5')!,
+  },
+  {
+    id: '6',
+    title: 'Goa Beach Hopping & Nightlife',
+    city: 'Goa',
+    days: 4,
+    price: { currency: 'INR', amount: 18000 },
+    rating: 4.7,
+    vendorId: 'v6',
+    image: PlaceHolderImages.find((p) => p.id === 'tour6')!,
+  },
+  {
+    id: '7',
+    title: 'Bengaluru: Garden City & Tech Hub',
+    city: 'Bengaluru',
+    days: 3,
+    price: { currency: 'INR', amount: 16000 },
+    rating: 4.6,
+    vendorId: 'v7',
+    image: PlaceHolderImages.find((p) => p.id === 'tour7')!,
+  },
+  {
+    id: '8',
+    title: 'Rishikesh Yoga & Adventure Retreat',
+    city: 'Rishikesh',
+    days: 5,
+    price: { currency: 'INR', amount: 22000 },
+    rating: 4.8,
+    vendorId: 'v8',
+    image: PlaceHolderImages.find((p) => p.id === 'tour8')!,
+  },
+>>>>>>> 1f03250 (second commit)
 ];
 
 export const hotels: Hotel[] = [
@@ -85,6 +128,49 @@ export const hotels: Hotel[] = [
     vendorId: 'vh4',
     image: PlaceHolderImages.find((p) => p.id === 'hotel4')!,
   },
+<<<<<<< HEAD
+=======
+  {
+    id: 'h5',
+    name: 'Taj View Grande',
+    city: 'Agra',
+    stars: 5,
+    amenities: ['Wifi', 'Pool', 'Rooftop Restaurant'],
+    priceMin: 9500,
+    vendorId: 'vh5',
+    image: PlaceHolderImages.find((p) => p.id === 'hotel5')!,
+  },
+  {
+    id: 'h6',
+    name: 'Goan Beachside Resort',
+    city: 'Goa',
+    stars: 4,
+    amenities: ['Wifi', 'Pool', 'Beach Access'],
+    priceMin: 7000,
+    vendorId: 'vh6',
+    image: PlaceHolderImages.find((p) => p.id === 'hotel6')!,
+  },
+  {
+    id: 'h7',
+    name: 'Silicon Valley Inn',
+    city: 'Bengaluru',
+    stars: 4,
+    amenities: ['Wifi', 'Gym', 'Business Center'],
+    priceMin: 5500,
+    vendorId: 'vh7',
+    image: PlaceHolderImages.find((p) => p.id === 'hotel7')!,
+  },
+  {
+    id: 'h8',
+    name: 'Ganga River Retreat',
+    city: 'Rishikesh',
+    stars: 3,
+    amenities: ['Wifi', 'Yoga Hall', 'River View'],
+    priceMin: 4000,
+    vendorId: 'vh8',
+    image: PlaceHolderImages.find((p) => p.id === 'hotel8')!,
+  },
+>>>>>>> 1f03250 (second commit)
 ];
 
 export const vehicles: Vehicle[] = [
@@ -130,4 +216,8 @@ export const vehicles: Vehicle[] = [
   },
 ];
 
+<<<<<<< HEAD
 export const cities = ['Delhi', 'Mumbai', 'Kerala', 'Jaipur', 'Goa', 'Bengaluru'];
+=======
+export const cities = ['Delhi', 'Mumbai', 'Kerala', 'Jaipur', 'Goa', 'Bengaluru', 'Agra', 'Rishikesh'];
+>>>>>>> 1f03250 (second commit)

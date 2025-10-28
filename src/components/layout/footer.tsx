@@ -19,7 +19,11 @@ export function Footer() {
             <Link href="#" className="text-sm text-muted-foreground hover:text-primary">
               Policies
             </Link>
+<<<<<<< HEAD
             <Link href="#" className="text-sm text-muted-foreground hover:text-primary">
+=======
+            <Link href="/vendor-signup" className="text-sm text-muted-foreground hover:text-primary">
+>>>>>>> 1f03250 (second commit)
               Vendor Signup
             </Link>
             <Link href="#" className="text-sm text-muted-foreground hover:text-primary">

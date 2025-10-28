@@ -12,7 +12,11 @@ import {
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { PageHeader } from '@/components/shared/page-header';
+<<<<<<< HEAD
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+=======
+import { Card, CardContent } from '@/components/ui/card';
+>>>>>>> 1f03250 (second commit)
 import { Label } from '@/components/ui/label';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { Calendar } from '@/components/ui/calendar';
@@ -169,6 +173,7 @@ export default function PlannerPage() {
   return (
     <div className="container mx-auto py-8">
       <PageHeader title="Itinerary Planner" subtitle="Build your perfect trip, day by day." />
+<<<<<<< HEAD
       <Card className="mb-8 rounded-xl">
         <CardContent className="p-6">
           <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
@@ -240,11 +245,89 @@ export default function PlannerPage() {
               <CardHeader>
                 <CardTitle className="flex justify-between items-center">
                   <span>Day {day.day}: {format(toDate(day.date), 'EEEE, dd MMMM')}</span>
+=======
+      
+        <Card className="mb-8 rounded-xl">
+          <CardContent className="p-6">
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+              <div>
+                <Label htmlFor="city">City</Label>
+                <Select value={city} onValueChange={setCity} disabled={!user}>
+                  <SelectTrigger id="city" className="h-11">
+                    <SelectValue placeholder="Select a city" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {cities.map((c) => (
+                      <SelectItem key={c} value={c}>
+                        {c}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
+              <div>
+                <Label>Date Range</Label>
+                <Popover>
+                  <PopoverTrigger asChild>
+                    <Button
+                      variant="outline"
+                      disabled={!user}
+                      className={cn(
+                        'h-11 w-full justify-start text-left font-normal',
+                        !dateRange && 'text-muted-foreground'
+                      )}
+                    >
+                      <CalendarIcon className="mr-2 h-4 w-4" />
+                      {dateRange?.from ? (
+                        dateRange.to ? (
+                          <>
+                            {formatDateForDisplay(dateRange.from)} - {formatDateForDisplay(dateRange.to)}
+                          </>
+                        ) : (
+                          formatDateForDisplay(dateRange.from)
+                        )
+                      ) : (
+                        <span>Pick a date range</span>
+                      )}
+                    </Button>
+                  </PopoverTrigger>
+                  <PopoverContent className="w-auto p-0" align="start">
+                    <Calendar
+                      initialFocus
+                      mode="range"
+                      defaultMonth={dateRange?.from}
+                      selected={dateRange}
+                      onSelect={setDateRange}
+                      numberOfMonths={2}
+                    />
+                  </PopoverContent>
+                </Popover>
+              </div>
+              <Button onClick={handleCreateOrUpdatePlan} className="h-11 self-end" disabled={!user}>
+                {activePlan ? 'Update Plan' : 'Create Plan'}
+              </Button>
+            </div>
+            {!user && <p className="mt-4 text-center text-sm text-muted-foreground">Please <a href="/login" className="underline">log in</a> to start planning.</p>}
+          </CardContent>
+        </Card>
+
+      {user && activePlan && (
+        <div className="mt-8 space-y-6">
+          {activePlan.days.map((day, dayIndex) => (
+            <Card key={day.day} className="rounded-xl">
+              <CardHeader>
+                <div className="flex justify-between items-center">
+                  <h3 className="font-headline text-xl font-bold">Day {day.day}: {format(toDate(day.date), 'EEEE, dd MMMM')}</h3>
+>>>>>>> 1f03250 (second commit)
                   <Button variant="ghost" size="sm" onClick={() => handleAddItem(dayIndex)}>
                     <PlusCircle className="mr-2 h-4 w-4" />
                     Add Activity
                   </Button>
+<<<<<<< HEAD
                 </CardTitle>
+=======
+                </div>
+>>>>>>> 1f03250 (second commit)
               </CardHeader>
               <CardContent>
                 <div className="space-y-4">
@@ -291,8 +374,13 @@ export default function PlannerPage() {
         </div>
       )}
        {user && !arePlansLoading && !activePlan && (
+<<<<<<< HEAD
         <div className="text-center text-muted-foreground">
           <p>You have no saved plans. Create one above to get started!</p>
+=======
+        <div className="text-center text-muted-foreground mt-8">
+          <p>You have no saved plans. Create one to get started!</p>
+>>>>>>> 1f03250 (second commit)
         </div>
       )}
     </div>
