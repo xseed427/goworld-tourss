@@ -31,8 +31,6 @@
       "imageHint": "Jaipur palace"
     },
     {
-<<<<<<< HEAD
-=======
       "id": "tour5",
       "description": "Placeholder for a tour in Agra.",
       "imageUrl": "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxUYWolMjBNYWhhbHxlbnwwfHx8fDE3NjE0MDIxNTd8MA&ixlib=rb-4.1.0&q=80&w=1080",
@@ -57,7 +55,6 @@
       "imageHint": "Rishikesh bridge"
     },
     {
->>>>>>> 1f03250 (second commit)
       "id": "hotel1",
       "description": "Placeholder for a hotel in Delhi.",
       "imageUrl": "https://images.unsplash.com/photo-1621293954908-907159247fc8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxsdXh1cnklMjBob3RlbHxlbnwwfHx8fDE3NjEyNTE1OTh8MA&ixlib=rb-4.1.0&q=80&w=1080",
@@ -82,8 +79,6 @@
       "imageHint": "heritage hotel"
     },
     {
-<<<<<<< HEAD
-=======
       "id": "hotel5",
       "description": "Placeholder for a hotel in Agra.",
       "imageUrl": "https://images.unsplash.com/photo-1543633452-196b6c208466?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxob3RlbCUyMHBvb2wlMjB2aWV3fGVufDB8fHx8MTc2MTQwMjI5NHww&ixlib=rb-4.1.0&q=80&w=1080",
@@ -108,7 +103,6 @@
       "imageHint": "retreat nature"
     },
     {
->>>>>>> 1f03250 (second commit)
       "id": "vehicle1",
       "description": "Placeholder for a bike rental.",
       "imageUrl": "https://images.unsplash.com/photo-1710442995917-c701593c9d75?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxtb3RvcmN5Y2xlJTIwcm9hZHxlbnwwfHx8fDE3NjEyMDQ0Njh8MA&ixlib=rb-4.1.0&q=80&w=1080",

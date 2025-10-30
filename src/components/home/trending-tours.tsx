@@ -3,11 +3,7 @@ import TourCard from '../shared/tour-card';
 import { PageHeader } from '../shared/page-header';
 
 export default function TrendingTours() {
-<<<<<<< HEAD
-  const trendingTours = tours.slice(0, 4); // Display first 4 as trending
-=======
   const trendingTours = tours.slice(0, 8); // Display first 8 as trending
->>>>>>> 1f03250 (second commit)
 
   return (
     <section className="container mx-auto pb-16">

@@ -1,26 +1,16 @@
 'use client';
 
 import Link from 'next/link';
-<<<<<<< HEAD
-import { useState } from 'react';
-=======
 import { useState, useEffect } from 'react';
->>>>>>> 1f03250 (second commit)
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-<<<<<<< HEAD
-import { useAuth, useFirestore, useUser } from '@/firebase';
-import { initiateEmailSignIn, initiateGoogleSignIn } from '@/firebase/non-blocking-login';
-import { useRouter } from 'next/navigation';
-=======
 import { useAuth, useFirestore, useUser, useDoc, useMemoFirebase } from '@/firebase';
 import { initiateEmailSignIn, initiateGoogleSignIn } from '@/firebase/non-blocking-login';
 import { useRouter } from 'next/navigation';
 import { doc } from 'firebase/firestore';
 import type { UserProfile } from '@/lib/types';
->>>>>>> 1f03250 (second commit)
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
@@ -30,20 +20,6 @@ export default function LoginPage() {
   const { user } = useUser();
   const router = useRouter();
 
-<<<<<<< HEAD
-  if (user) {
-    router.push('/');
-  }
-
-  const handleLogin = () => {
-    initiateEmailSignIn(auth, email, password);
-  };
-  
-  const handleGoogleLogin = () => {
-    initiateGoogleSignIn(auth, firestore);
-  };
-
-=======
   // Memoize the document reference
   const userDocRef = useMemoFirebase(() => {
     if (firestore && user?.uid) {
@@ -85,7 +61,6 @@ export default function LoginPage() {
     return <div className="flex min-h-[80vh] items-center justify-center bg-background"><p>Logging in...</p></div>;
   }
 
->>>>>>> 1f03250 (second commit)
   return (
     <div className="flex min-h-[80vh] items-center justify-center bg-background">
       <Card className="mx-auto w-full max-w-sm rounded-xl">
@@ -141,8 +116,3 @@ export default function LoginPage() {
     </div>
   );
 }
-<<<<<<< HEAD
-
-    
-=======
->>>>>>> 1f03250 (second commit)

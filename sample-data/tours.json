@@ -1,0 +1,24 @@
+[
+  {
+    "id": "tour-demo-1",
+    "title": "Goa Beach Escape",
+    "vendorId": "vendor-demo-1",
+    "price": 5000,
+    "location": {
+      "city": "Goa",
+      "country": "India"
+    },
+    "published": true
+  },
+  {
+    "id": "tour-demo-2",
+    "title": "Rajasthan Heritage Tour",
+    "vendorId": "vendor-demo-2",
+    "price": 12000,
+    "location": {
+      "city": "Jaipur",
+      "country": "India"
+    },
+    "published": true
+  }
+]

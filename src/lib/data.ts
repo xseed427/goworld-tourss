@@ -42,8 +42,6 @@ export const tours: Tour[] = [
     vendorId: 'v4',
     image: PlaceHolderImages.find((p) => p.id === 'tour4')!,
   },
-<<<<<<< HEAD
-=======
   {
     id: '5',
     title: 'Majestic Taj Mahal Sunrise Tour',
@@ -84,7 +82,6 @@ export const tours: Tour[] = [
     vendorId: 'v8',
     image: PlaceHolderImages.find((p) => p.id === 'tour8')!,
   },
->>>>>>> 1f03250 (second commit)
 ];
 
 export const hotels: Hotel[] = [
@@ -128,8 +125,6 @@ export const hotels: Hotel[] = [
     vendorId: 'vh4',
     image: PlaceHolderImages.find((p) => p.id === 'hotel4')!,
   },
-<<<<<<< HEAD
-=======
   {
     id: 'h5',
     name: 'Taj View Grande',
@@ -170,7 +165,6 @@ export const hotels: Hotel[] = [
     vendorId: 'vh8',
     image: PlaceHolderImages.find((p) => p.id === 'hotel8')!,
   },
->>>>>>> 1f03250 (second commit)
 ];
 
 export const vehicles: Vehicle[] = [
@@ -216,8 +210,4 @@ export const vehicles: Vehicle[] = [
   },
 ];
 
-<<<<<<< HEAD
-export const cities = ['Delhi', 'Mumbai', 'Kerala', 'Jaipur', 'Goa', 'Bengaluru'];
-=======
 export const cities = ['Delhi', 'Mumbai', 'Kerala', 'Jaipur', 'Goa', 'Bengaluru', 'Agra', 'Rishikesh'];
->>>>>>> 1f03250 (second commit)

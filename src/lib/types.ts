@@ -11,11 +11,7 @@ export type Tour = {
   };
   rating: number;
   vendorId: string;
-<<<<<<< HEAD
-  image: ImagePlaceholder;
-=======
   image?: ImagePlaceholder; // Make image optional for vendor created tours
->>>>>>> 1f03250 (second commit)
 };
 
 export type Hotel = {
@@ -61,8 +57,6 @@ export type ItineraryPlan = {
   days: ItineraryDay[];
   userId?: string;
 };
-<<<<<<< HEAD
-=======
 
 export type Vendor = {
   id: string;
@@ -84,4 +78,3 @@ export type UserProfile = {
     role: 'user' | 'vendor' | 'admin';
     status: 'active' | 'inactive';
 };
->>>>>>> 1f03250 (second commit)

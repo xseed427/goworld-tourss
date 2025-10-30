@@ -1,0 +1,69 @@
+{
+  "collections": {
+    "users": {
+      "fields": {
+        "uid": "string",
+        "name": "string",
+        "email": "string",
+        "role": "string",
+        "vendorVerified": "boolean",
+        "createdAt": "timestamp"
+      }
+    },
+    "vendors": {
+      "fields": {
+        "vendorId": "string",
+        "ownerUid": "string",
+        "businessName": "string",
+        "verified": "boolean"
+      }
+    },
+    "tours": {
+      "fields": {
+        "title": "string",
+        "vendorId": "string",
+        "price": "number",
+        "location": "map",
+        "published": "boolean"
+      }
+    },
+    "hotels": {
+      "fields": {
+        "name": "string",
+        "city": "string",
+        "vendorId": "string"
+      }
+    },
+    "vehicles": {
+      "fields": {
+        "type": "string",
+        "model": "string",
+        "vendorId": "string"
+      }
+    },
+    "bookings": {
+      "fields": {
+        "userId": "string",
+        "listingId": "string",
+        "listingType": "string",
+        "status": "string",
+        "amount": "number"
+      }
+    },
+    "itineraries": {
+      "fields": {
+        "userId": "string",
+        "title": "string",
+        "days": "array"
+      }
+    },
+    "reviews": {
+      "fields": {
+        "userId": "string",
+        "listingId": "string",
+        "rating": "number",
+        "comment": "string"
+      }
+    }
+  }
+}

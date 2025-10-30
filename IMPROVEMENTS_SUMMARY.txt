@@ -1,0 +1,11 @@
+
+GoWorld Improvements - Summary
+Generated: 2025-10-30T08:19:59.371072Z
+
+Files added/modified:
+- firestore.rules (replaced with recommended rules)
+- firebase-schema-example.json
+- DEV_NOTES_UI.md
+- sample-data/ (tours.json, users.json)
+- src/app/dashboard/created (admin/vendor/user) scaffold pages
+- functions/setCustomClaimExample.js

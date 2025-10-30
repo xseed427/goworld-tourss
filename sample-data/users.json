@@ -1,0 +1,16 @@
+[
+  {
+    "uid": "user-demo-1",
+    "name": "Rehan Mulla",
+    "email": "rehan@example.com",
+    "role": "admin",
+    "createdAt": "2025-10-30T00:00:00Z"
+  },
+  {
+    "uid": "user-demo-2",
+    "name": "Demo Vendor",
+    "email": "vendor@example.com",
+    "role": "vendor",
+    "createdAt": "2025-10-30T00:00:00Z"
+  }
+]
